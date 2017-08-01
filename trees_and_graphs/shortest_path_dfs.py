@@ -14,6 +14,7 @@ def shortest_path_dfs(graph, curr, search):
       distances.append(dist)
   # print ('loop exited. curr {}, distances {}'.format(curr, distances))
   if distances == []:
+    # Don't rely on this for really big graphs.
     return 1000000
   return min(distances)
 
