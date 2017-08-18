@@ -9,3 +9,6 @@
 #### 3. Dynamic Array
 ##### https://www.hackerrank.com/challenges/dynamic-array
 
+#### 4. Array Left-Rotation
+##### https://www.hackerrank.com/challenges/array-left-rotation
+
