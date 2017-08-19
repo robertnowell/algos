@@ -18,3 +18,5 @@
 #### 6. Reduced String
 ##### https://www.hackerrank.com/challenges/reduced-string
 
+#### 7. Camel Case
+##### https://www.hackerrank.com/challenges/camelcase
