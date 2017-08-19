@@ -12,3 +12,9 @@
 #### 4. Array Left-Rotation
 ##### https://www.hackerrank.com/challenges/array-left-rotation
 
+#### 5. Sparse Arrays
+##### https://www.hackerrank.com/challenges/sparse-arrays
+
+#### 6. Reduced String
+##### https://www.hackerrank.com/challenges/reduced-string
+
