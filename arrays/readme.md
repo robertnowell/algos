@@ -20,3 +20,6 @@
 
 #### 7. Camel Case
 ##### https://www.hackerrank.com/challenges/camelcase
+
+#### 8. Two Characters
+##### https://www.hackerrank.com/challenges/two-characters
