@@ -26,3 +26,6 @@
 
 #### 9. Caesar Cypher
 ##### https://www.hackerrank.com/challenges/caesar-cipher-1
+
+#### 10. Mars Exploration
+##### https://www.hackerrank.com/challenges/mars-exploration
