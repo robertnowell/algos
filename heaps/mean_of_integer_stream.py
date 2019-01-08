@@ -16,7 +16,8 @@ def mean_of_int_stream(n, max_heap, min_heap):
     return (max_heap.max() + min_heap.min())/2
 
 def balance_heaps(h1, h2):
-  """rearrange elements of two heaps to ensure that the quantity of elements in each heap does not differ by more than one."""
+  """rearrange elements of two heaps to ensure that the quantity 
+  of elements in each heap does not differ by more than one."""
   return
 
 class MinHeap:
@@ -24,13 +25,21 @@ class MinHeap:
     self.heapList = [0]
     self.max_index = 0
 
+  def del_min(self):
+    ret = self.heapList[0]
+    self.heapList[0] = self.heapList[self.max_index]
+    self.heapList.pop()
+    self.max_index -= 1
+    self.bubble_down(0)
+    return ret
+
   def bubble_down(self, i):
-    # if (2 * i + 1) > self.max_index:
-    #   if self.heapList[i] > self.heapList[2 * i]:
-    #     tmp = self.heapList[i]
-    #     self.heapList[i] = self.heapList[2 * i]
-    #     self.heapList[2 * i] = tmp
-    if self.heapList[i] > self.heapList[2 * i] or self.heapList[i] > self.heapList[2 * i + 1]:
+    if (2 * i + 1) > self.max_index:
+      if self.heapList[i] > self.heapList[2 * i]:
+        tmp = self.heapList[i]
+        self.heapList[i] = self.heapList[2 * i]
+        self.heapList[2 * i] = tmp
+    elif self.heapList[i] > self.heapList[2 * i] or self.heapList[i] > self.heapList[2 * i + 1]:
       k = (2 * i) if self.heapList[2 * i] <= self.heapList[2 * i + 1] else (2 * i + 1)
       tmp = self.heapList[k]
       self.heapList[k] = self.heapList[i]
@@ -50,7 +59,8 @@ class MinHeap:
     self.max_index = self.max_index + 1
     self.bubble_up(self.max_index)
 
-  # this came from the internet, and I decided to write my own. Kept around for reference, for now
+  # this came from the internet, and I decided to write my own. 
+  # Kept around for reference, for now
   # def percUp(self, i):
   #   while i // 2 > 0:
   #     if self.heapList[i] < self.heapList[i // 2]:
@@ -60,8 +70,10 @@ class MinHeap:
   #     i = i // 2
 
 test = MinHeap()
-test.heapList = [10, 1, 3, 4, 5, 6, 7, 8, 0, 0, 0]
+test.heapList = [10, 1, 3, 4, 5, 6, 7, 8]
 test.max_index = len(test.heapList) - 1
 # test.insert(2)
 test.bubble_down(0)
+print test.heapList
+print test.del_min()
 print test.heapList
