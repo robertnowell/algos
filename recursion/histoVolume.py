@@ -26,5 +26,5 @@ def vol(a, i, volSoFar, left, negative):
 			print("choose ", choose, ", nochoose ", nochoose)
 			return max(nochoose, choose)
 if __name__ == '__main__':
-	a = [0,0,4,0,0,6,0,0,3,0,1, 0, 5,0,1,0,0,0]
+	a = [0,0,4,0,0,6,0,0,3,0,1,0,5,0,1,0,0,0]
 	print (vol(a, 0, 0, -1, 0))

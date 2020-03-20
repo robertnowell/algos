@@ -39,7 +39,7 @@ class ops():
 			return float(op1) + float(op2)
 		if (op == '-'):
 			return float(op1) - float(op2)
-
+ 
 if __name__ == '__main__':
 	# ops([2, '-', 6, '-', 7, '*', 8, '/', 2, '+', 5])
 	ops([2, '*', 3, '+', 5, '/', 6, '*', 3, '+', 15])

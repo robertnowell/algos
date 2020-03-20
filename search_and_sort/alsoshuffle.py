@@ -19,8 +19,6 @@ def recShuffle(arr, i):
 	arr[i] = swap
 	return recShuffle(arr, i-1)
 
-
-
 ma = {}
 
 def addTomap(arr):
@@ -40,4 +38,3 @@ if __name__ == '__main__':
 		for kk, vv in v.items():
 			if vv > rounds/52 *2 or vv < rounds/52/2:
 				print (k, kk, vv)
- 
