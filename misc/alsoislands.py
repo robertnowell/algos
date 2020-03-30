@@ -52,17 +52,12 @@ class IslandFinder():
 
 	def isUnseenIsland(self, x, y):
 		key = (x, y)
-		print ("checking if " + str(key) + " is a distinct island")
 		if key in self.visited:
-			print (str(key) + " is not a distinct island because " + "seen this time " if key in self.seenThisTime else " previously visited")
 			return False
 		if key in self.seenThisTime:
 			return True
 		self.seenThisTime.add(key)
-		# if key in self.visited:
-		# 	return True
 		isUnseen = True
-		# import pdb; pdb.set_trace()
 		for i in range(-1, 2, 2):
 			xx = x+i
 			yy = y+i
@@ -70,8 +65,6 @@ class IslandFinder():
 				isUnseen = self.isUnseenIsland(xx, y)
 			if (x, yy) != (self.curX, self.curY) and self.inRange(x, yy) and self.grid[x][yy]:
 				isUnseen = self.isUnseenIsland(x, yy)
-		if isUnseen:
-			print str(key) + " is a distinct island"
 		return isUnseen
 
 	def countJoinedIslands(self, x, y):
@@ -84,28 +77,17 @@ class IslandFinder():
 			xx = x+i
 			self.seenThisTime.add((x, y))
 			if self.inRange(xx, y) and self.grid[xx][y]:
-				print self.visited
-				print("checking joined island, ", xx, y)
 				if self.isUnseenIsland(xx, y):
-					print("joined island ", xx, y)
 					joined += 1
 			self.visited.update(self.seenThisTime)
-			print(self.visited)
 			self.seenThisTime = set()
 
 			yy = y+i
 			self.seenThisTime.add((x, y))
-			# if x == 1 and yy == 1:
-				# import pdb; pdb.set_trace()
 			if self.inRange(x, yy) and self.grid[x][yy]:
-				print self.visited
-
-				print("checking joined island, ", x, yy)
 				if self.isUnseenIsland(x, yy):
-					print("joined island ", x, yy)
 					joined += 1
 			self.visited.update(self.seenThisTime)
-			print(self.visited)
 			self.seenThisTime = set()
 		return joined
 
@@ -115,8 +97,6 @@ class IslandFinder():
 			return self.islandsCount
 		self.grid[x][y] = True
 		n = self.countNeighbors(x, y)
-		print ("neighbors", n)
-
 		if n == 0:
 			self.islandsCount += 1
 		elif n > 1:
@@ -132,21 +112,21 @@ class IslandFinder():
 
 if __name__ == '__main__':
 	islands = IslandFinder(3)
-	print islands.addLand(2, 1) # 1
+	print "island count = ", islands.addLand(2, 1) # 1
 	print islands
 
 	# W W W
 	# W W W
 	# W L W
 
-	print islands.addLand(1, 0) # 2
+	print "island count = ", islands.addLand(1, 0) # 2
 	print islands
 
 	# W W W
 	# L W W
 	# W L W
 
-	print islands.addLand(0, 2) # 3
+	print "island count = ", islands.addLand(0, 2) # 3
 	print islands
 
 	# W W L
@@ -154,7 +134,7 @@ if __name__ == '__main__':
 	# W L W
 	# print islands
 
-	print islands.addLand(1, 1) # 2
+	print "island count = ", islands.addLand(1, 1) # 2
 	print islands
 
 	# W W L
@@ -162,7 +142,7 @@ if __name__ == '__main__':
 	# W L W
 
 	# print islands
-	print islands.addLand(1, 2) # 1
+	print "island count = ", islands.addLand(1, 2) # 1
 	# print islands
 
 	# W W L
@@ -170,7 +150,7 @@ if __name__ == '__main__':
 	# W L W
 	print islands
 
-	print islands.addLand(0, 1) # 1
+	print "island count = ", islands.addLand(0, 1) # 1
 	print islands
 
 	# W L L
